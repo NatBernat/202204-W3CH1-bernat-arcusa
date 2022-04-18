@@ -9,8 +9,9 @@ const daenerys = new Luchador("Daenerys", "Targaryen", 30, "Dragones", 10);
 const tyrion = new Asesor("Tyrion", "Lannister", 40, daenerys);
 const bronn = new Escudero("Bronn", "AguasNegras", 54, 0, jaime);
 
-console.log(joffrey);
-console.log(jaime);
-console.log(daenerys);
-console.log(tyrion);
-console.log(bronn);
+const consoleaPersonajes = () => {
+  const listaPersonajes = [joffrey, jaime, daenerys, tyrion, bronn];
+  return listaPersonajes;
+};
+
+consoleaPersonajes();
