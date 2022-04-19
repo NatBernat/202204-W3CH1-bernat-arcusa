@@ -1,5 +1,5 @@
-import Personaje from "./Personaje";
-import Luchador from "./Luchador";
+import Personaje from "./Personaje.js";
+import Luchador from "./Luchador.js";
 
 class Escudero extends Personaje {
   sirveA;
@@ -20,6 +20,7 @@ class Escudero extends Personaje {
   }
 
   filtrarPelotismo(gradoPelotismo) {
+    this.gradoPelotismo = gradoPelotismo;
     if (gradoPelotismo < 0) {
       return 0;
     }

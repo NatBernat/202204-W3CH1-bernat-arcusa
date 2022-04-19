@@ -1,17 +1,11 @@
-import Rey from "./components/Rey";
-import Luchador from "./components/Luchador";
-import Asesor from "./components/Asesor";
-import Escudero from "./components/Escudero";
+/* eslint-disable no-new */
+import personajes from "./components/personajes.js";
+import Ficha from "./components/Ficha.js";
 
-const joffrey = new Rey("Joffrey", "Baratheon", 16, 2);
-const jaime = new Luchador("Jaime", "Lannister", 45, "Espada", 7);
-const daenerys = new Luchador("Daenerys", "Targaryen", 30, "Dragones", 10);
-const tyrion = new Asesor("Tyrion", "Lannister", 40, daenerys);
-const bronn = new Escudero("Bronn", "AguasNegras", 54, 0, jaime);
+const listContainer = document.querySelector(
+  ".characters-list.row.list-unstyled"
+);
 
-const consoleaPersonajes = () => {
-  const listaPersonajes = [joffrey, jaime, daenerys, tyrion, bronn];
-  return listaPersonajes;
-};
-
-consoleaPersonajes();
+personajes.forEach((personaje) => {
+  new Ficha(listContainer, personaje, "character col");
+});

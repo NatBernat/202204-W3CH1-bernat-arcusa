@@ -1,4 +1,4 @@
-import Personaje from "./Personaje";
+import Personaje from "./Personaje.js";
 
 class Asesor extends Personaje {
   asesorado;
