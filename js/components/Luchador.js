@@ -1,4 +1,4 @@
-import Personaje from "./Personaje";
+import Personaje from "./Personaje.js";
 
 class Luchador extends Personaje {
   arma;
@@ -17,6 +17,7 @@ class Luchador extends Personaje {
   }
 
   filtraDestreza(valorDestreza) {
+    this.valorDestreza = valorDestreza;
     if (valorDestreza < 0) {
       return 0;
     }
