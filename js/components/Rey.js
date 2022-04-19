@@ -3,8 +3,8 @@ import Personaje from "./Personaje.js";
 class Rey extends Personaje {
   anyosReinado;
 
-  constructor(nombreRey, familiaRey, edadRey, anyosReinadoRey) {
-    super(nombreRey, familiaRey, edadRey);
+  constructor(nombreRey, familiaRey, edad, anyosReinadoRey) {
+    super(nombreRey, familiaRey, edad);
     this.anyosReinado = anyosReinadoRey;
   }
 

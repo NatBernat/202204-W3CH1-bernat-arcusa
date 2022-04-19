@@ -8,11 +8,11 @@ class Escudero extends Personaje {
   constructor(
     nombreEscudero,
     familiaEscudero,
-    edadEscudero,
+    edad,
     valorPelotismo,
     personajeSirve
   ) {
-    super(nombreEscudero, familiaEscudero, edadEscudero);
+    super(nombreEscudero, familiaEscudero, edad);
     this.pelotismo = this.filtrarPelotismo(valorPelotismo);
     if (personajeSirve instanceof Luchador) {
       this.sirveA = personajeSirve;
