@@ -1,6 +1,8 @@
 import Component from "./Component.js";
 import Rey from "./Rey.js";
 import Luchador from "./Luchador.js";
+import Escudero from "./Escudero.js";
+import Asesor from "./Asesor.js";
 
 class Ficha extends Component {
   constructor(parentElement, personaje, nameClass) {
@@ -48,10 +50,26 @@ class Ficha extends Component {
                       ? `<li>Arma: ${this.personaje.arma}</li>`
                       : ""
                   }
-                  <li>Destreza: X</li>
-                  <li>Peloteo: X</li>
-                  <li>Asesora a: X</li>
-                  <li>Sirve a: X</li>
+                  ${
+                    this.personaje instanceof Luchador
+                      ? `<li>Destreza: ${this.personaje.destreza}</li>`
+                      : ""
+                  }
+                  ${
+                    this.personaje instanceof Escudero
+                      ? `<li>Peloteo: ${this.personaje.pelotismo}</li>`
+                      : ""
+                  }
+                  ${
+                    this.personaje instanceof Asesor
+                      ? `<li>Asesora a: ${this.personaje.asesorado.nombre}</li>`
+                      : ""
+                  }
+                  ${
+                    this.personaje instanceof Escudero
+                      ? `<li>Sirve a: ${this.personaje.sirveA.nombre}</li>`
+                      : ""
+                  }
                 </ul>
                 <div class="character__actions">
                   <button class="character__action btn">habla</button>
@@ -59,7 +77,12 @@ class Ficha extends Component {
                 </div>
               </div>
             </div>
-            <i class="emoji"></i>
+            <i class="emoji">
+            ${this.personaje instanceof Rey ? `👑` : ""}
+            ${this.personaje instanceof Luchador ? `🗡` : ""}
+            ${this.personaje instanceof Asesor ? `🎓` : ""}
+            ${this.personaje instanceof Escudero ? `🛡` : ""}
+            </i>
           </div>
           `;
   }
